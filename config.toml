@@ -1,3 +1,247 @@
-baseURL = "http://example.org/"
+baseurl = "https://taipei.gdgcloud.tw/"
+title = "GDGCloud Taipdi"
+theme = "hugo-universal-theme"
+themesDir = "./themes"
 languageCode = "en-us"
-title = "My New Hugo Site"
+# Site language. Available translations in the theme's `/i18n` directory.
+defaultContentLanguage = "zh-tw"
+# Enable comments by entering your Disqus shortname
+disqusShortname = "devcows"
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = ""
+# Code highlight
+PygmentsCodeFences = false
+# Define the number of posts per page
+paginate = 10
+
+[menu]
+
+# Main menu
+
+[[menu.main]]
+    identifier="home"
+    name = "首頁"
+    url  = "/"
+    weight = 1
+
+[[menu.main]]
+    identifier="blog"
+    name = "文章"
+    url  = "/blog/"
+    weight = 2
+
+[[menu.main]]
+    identifier = "community"
+    name = "社群"
+    weight = 10
+
+[[menu.main]]
+    parent="community"
+    name = "Meetup"
+    url  = "/tags/meetup"
+    weight = 11
+
+[[menu.main]]
+    parent="community"
+    name = "作者文章投稿"
+    url  = "/authors/"
+    weight = 12
+
+[[menu.main]]
+    parent="community"
+    name = "譯者文章投稿"
+    url  = "/translators/"
+    weight = 13
+
+[[menu.main]]
+    parent="community"
+    name = "譯者文章投稿"
+    url  = "/translators/"
+    weight = 14    
+
+[[menu.main]]
+    parent="community"
+    name = "投搞指南"
+    url  = "/contributing-specification/"
+    weight = 15
+
+[[menu.main]]
+    parent="community"
+    name = "活動"
+    url  = "/activity/"
+    weight = 16
+
+[[menu.main]]
+    parent="community"
+    name = "工商服務"
+    url  = "/jobs/"
+    weight = 17
+
+[[menu.main]]
+    identifier = "fas fa-external-link-alt"
+    name = "活動報名"
+    url  = "https://gdg.community.dev/gdg-cloud-taipei/"
+    weight = 20
+    pre = "<i class='fas fa-external-link-alt'></i>"
+    [menu.main.params]
+        target="_blank"
+
+[[menu.main]]
+    identifier = "contact"
+    name = "連絡我們"
+    url  = "/contact/"
+    weight = 30
+
+# Top bar social links menu
+
+[[menu.topbar]]
+    weight = 1
+    name = "GitHub"
+    url = "https://github.com/devcows/hugo-universal-theme"
+    pre = "<i class='fab fa-2x fa-github'></i>"
+
+[[menu.topbar]]
+    weight = 2
+    name = "Facebook"
+    url = "http://facebook.com"
+    pre = "<i class='fab fa-2x fa-facebook'></i>"
+
+[[menu.topbar]]
+    weight = 3
+    name = "Twitter"
+    url = "http://twitter.com"
+    pre = "<i class='fab fa-2x fa-twitter'></i>"
+
+[[menu.topbar]]
+    weight = 4
+    name = "Email"
+    url = "mailto:your@email.com"
+    pre = "<i class='fas fa-2x fa-envelope'></i>"
+
+[params]
+    viewMorePostLink = "/blog/"
+    author = "GDG Cloud Taipei"
+    defaultKeywords = ["gdgcloud", "gcp", "go"]
+    mainSections = ["blog"]
+    defaultDescription = "GDGCloud Taipei Blog"
+
+    # Social media
+    facebook_site = "" # the Facebook handle of your site ('https://www.facebook.com/HANDLE')
+    twitter_site = "" # the Twitter handle of your site (without the '@')
+    default_sharing_image = "img/sharing-default.png"
+
+    # Google Maps widget: If `googleMapsApiKey` is not set, no key will be passed to Google (which likely results in a broken map widget).
+    enableGoogleMaps = false
+    googleMapsApiKey = "AIzaSyCFhtWLJcE30xOAjcbSFi-0fnoVmQZPb1Y"
+
+    latitude = "-12.043333"
+    longitude = "-77.028333"
+
+    # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
+    style = "blue"
+
+    # Since this template is static, the contact form uses www.formspree.io as a
+    # proxy. The form makes a POST request to their servers to send the actual
+    # email. Visitors can send up to a 50 emails each month for free.
+    #
+    # What you need to do for the setup?
+    #
+    # - register your account to https://formspree.io/register
+    # - login and create new form
+    # - set your form's endpoint url under 'formspree_action' below
+    # - upload the generated site to your server
+    # - test a dummy email yourself
+    # - you're done. Happy mailing!
+    #
+    # Enable the contact form by entering your Formspree.io endpoint url
+    # formspree_action = ""
+    contact_form_ajax = false
+
+    # 404 page
+    errorimage = "/img/404.png"
+
+    about_us = "<p>我們是 GDGCloud Taipei。在 Google 雲端服務在台灣地區展露頭角之後，有許多新的服務、新的知識、新的創意，歡迎大家一起分享，一起了解 Google 雲端服務"
+    copyright = "Copyright ©️ 2021, GDGCloud Taipei all rights reserved."
+
+    # Format dates with Go's time formatting
+    date_format = "2006年1月2日"
+
+    logo = "img/logo.png"
+    logo_small = "img/logo-small.png"
+    address = """<p>請至 Facebook 搜尋 GCPUG.TW 或是掃描下面的 QR code，加入社團</p><p><img src="/img/gcpugtaipei_fb_group_128.png"></p>"""
+
+[Permalinks]
+    blog = "/blog/:filename/"
+
+# Enable or disable top bar with social icons
+[params.topbar]
+    enable = false
+    text = """<p class="hidden-sm hidden-xs">Contact us on +420 777 555 333 or hello@universal.com.</p>
+      <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fas fa-phone"></i></a>
+      <a href="#" data-animate-hover="pulse"><i class="fas fa-envelope"></i></a>
+      </p>
+      """
+
+# Enable and disable widgets for the right sidebar
+[params.widgets]
+    categories = true
+    tags = true
+    search = true
+
+[params.carousel]
+    enable = true
+    # All carousel items are defined in their own files. You can find example items
+    # at 'exampleSite/data/carousel'.
+    # For more informtion take a look at the README.
+
+[params.features]
+    enable = false
+    # All features are defined in their own files. You can find example items
+    # at 'exampleSite/data/features'.
+    # For more informtion take a look at the README.
+
+[params.testimonials]
+    enable = true
+    # All testimonials are defined in their own files. You can find example items
+    # at 'exampleSite/data/testimonials'.
+    # For more informtion take a look at the README.
+    title = "公告"
+    subtitle = ""
+
+[params.see_more]
+    enable = true
+    icon = "far fa-file-alt"
+    title = "一同參與"
+    subtitle = "加入 GDGCloud Taipei"
+    link_url = "/contact"
+    link_text = "更多資訊"
+
+[params.clients]
+    enable = true
+    # All clients are defined in their own files. You can find example items
+    # at 'exampleSite/data/clients'.
+    # For more informtion take a look at the README.
+    title = "贊助商"
+    subtitle = ""
+
+[params.recent_posts]
+    enable = true
+    title = "最新文章"
+    subtitle = "社群參與者的部落格與最 in 的新聞都在這裡"
+
+[outputs]
+    home = ["HTML", "RSS", "Algolia"]
+
+[outputFormats.Algolia]
+    baseName = "algolia"
+    isPlainText = true
+    mediaType = "application/json"
+    notAlternative = true
+
+[params.algolia]
+    enable = true
+    appid = "Q1O7C11OQ6"
+    index = "website"
+    vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
+    params = ["categories", "tags"]
+    key = "cf1cf71c81051abfc308e8c6a9188870"
