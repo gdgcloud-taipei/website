@@ -1,4 +1,4 @@
 [submodule "themes/hugo-universal-theme"]
 	path = themes/hugo-universal-theme
-	url = git@github.com:gdgcloud-taipei/hugo-universal-theme.git
+	url = https://github.com/gdgcloud-taipei/hugo-universal-theme.git
 	branch = style/post

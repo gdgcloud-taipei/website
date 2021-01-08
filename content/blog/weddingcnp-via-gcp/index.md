@@ -1,7 +1,7 @@
 ---
 title: Weddingcnp via Gcp
 date: 2021-01-08T09:59:24+08:00
-draft: true
+draft: false
 banner: >-
   /blog/weddingcnp-via-gcp/img/weddingcnp-via-gpc-0_2.png
 author: KAI CHU CHUNG
