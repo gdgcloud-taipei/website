@@ -9,6 +9,6 @@ keywords:
 
 | 作者 | 文章數 |
 | ---- | ---- |
-| IndustrialClouds.net | 1 |
+
 
 投遞原創文章 https://github.com/gdgcloud-taipei/website
