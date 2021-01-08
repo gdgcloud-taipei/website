@@ -43,6 +43,20 @@ jobs:
         working-directory: ./
         run: hugo --minify --gc
 
+      - name: analyse
+        working-directory: ./
+        run: |
+          ORIG_JSON=${ORIG_JSON} FORMATED_JSON=${FORMATED_JSON} TRANSLATORS=${TRANSLATORS} AUTHORS=${AUTHORS} ./scripts/analyse.sh
+        env:
+          ORIG_JSON: ./public/algolia.json
+          FORMATED_JSON: ./public/blog_list.json
+          TRANSLATORS: ./content/translators.md
+          AUTHORS: ./content/authors.md
+
+      - name: rebuild content to update authors and translators
+        working-directory: ./
+        run: hugo --minify --gc
+
       - name: deploy and publish updates
         working-directory: ./public
         run: |
