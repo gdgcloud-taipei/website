@@ -1,0 +1,53 @@
+name: ci
+
+on:
+  pull_request:
+    branches: 
+    - master
+  push:
+    branches: 
+    - master
+
+jobs:
+  hugo-publish:
+    name: publish content to public site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout reposistory
+        uses: actions/checkout@master
+
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
+        with:
+          token: ${{ secrets.HUGO_GITHUB_PAT }}
+
+      - name: checkout public repo
+        uses: actions/checkout@v2
+        with:
+          path: public 
+          repository: gdgcloud-taipei/gdgcloudtaipei.github.io
+          token: ${{ secrets.HUGO_GITHUB_PAT }}
+
+      - name: setup hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: latest
+          extended: true
+
+      - name: cleanup files of public site
+        working-directory: ./public
+        shell: bash
+        run: find . -type f -name '*.min.*' -exec rm -f {} \;
+
+      - name: build content to public site
+        working-directory: ./
+        run: hugo --minify --gc
+
+      - name: deploy and publish updates
+        working-directory: ./public
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add . -A
+          git commit -m "[chore] Auto publish"
+          git push origin -f
