@@ -43,10 +43,6 @@ jobs:
         working-directory: ./
         run: hugo --minify --gc
 
-      - name: update analyse
-        working-directory: ./scripts
-        run: ./analyse.sh
-
       - name: deploy and publish updates
         working-directory: ./public
         run: |
