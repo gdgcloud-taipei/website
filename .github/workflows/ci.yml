@@ -32,7 +32,7 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: latest
-          extended: true
+          extended: false
 
       - name: cleanup files of public site
         working-directory: ./public
@@ -43,19 +43,12 @@ jobs:
         working-directory: ./
         run: hugo --minify --gc
 
-      - name: analyse
-        working-directory: ./
-        run: |
-          ORIG_JSON=${ORIG_JSON} FORMATED_JSON=${FORMATED_JSON} TRANSLATORS=${TRANSLATORS} AUTHORS=${AUTHORS} ./scripts/analyse.sh
-        env:
-          ORIG_JSON: ./public/algolia.json
-          FORMATED_JSON: ./public/blog_list.json
-          TRANSLATORS: ./content/translators.md
-          AUTHORS: ./content/authors.md
-
-      - name: rebuild content to update authors and translators
-        working-directory: ./
-        run: hugo --minify --gc
+      - uses: rxrw/algolia-index-uploader@v1
+        with:
+          index_path: 'public/algolia.json'
+          algolia_index_id: ${{ secrets.ALGOLIA_APPLICATION_ID }}
+          algolia_index_name: index
+          algolia_index_admin_key: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
 
       - name: deploy and publish updates
         working-directory: ./public
