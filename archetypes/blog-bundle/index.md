@@ -2,8 +2,7 @@
 title: {{ replace .Name "-" " " | title }}
 date: {{ .Date }}
 draft: true
-banner: >-
-  /blog/{{ .Name }}/img/<your-image>
+# banner: img/<your-image> # 沒有指定會使用預設圖片
 author: //TODO
 # authorlink: //TODO
 # translator: null
@@ -13,8 +12,7 @@ author: //TODO
 # reviewerlink:
 #   - null
 # originallink: null
-summary: >-
-    這裡填寫文章摘要(這兒為可以搜尋到的文字)
+
 tags:
   - //TODO
 categories:
