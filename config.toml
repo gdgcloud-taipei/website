@@ -57,7 +57,7 @@ paginate = 10
     parent="community"
     name = "譯者文章投稿"
     url  = "/translators/"
-    weight = 14    
+    weight = 14
 
 [[menu.main]]
     parent="community"
@@ -79,7 +79,7 @@ paginate = 10
 
 [[menu.main]]
     identifier = "fas fa-external-link-alt"
-    name = "活動報名"
+    name = "報名"
     url  = "https://gdg.community.dev/gdg-cloud-taipei/"
     weight = 20
     pre = "<i class='fas fa-external-link-alt'></i>"
@@ -121,7 +121,7 @@ paginate = 10
 [params]
     viewMorePostLink = "/blog/"
     author = "GDG Cloud Taipei"
-    defaultKeywords = ["gdgcloud", "gcp", "go"]
+    defaultKeywords = ["gdgcloud", "gcp"]
     mainSections = ["blog"]
     defaultDescription = "GDGCloud Taipei Blog"
 
@@ -186,7 +186,28 @@ paginate = 10
 [params.widgets]
     categories = true
     tags = true
-    search = true
+
+[params.widgets.search]
+    enable = true
+    # // support search now
+    type = "algolia"
+    # max index length of the chunked content
+    contentLength = 4000
+    # placeholder of the search bar
+    placeholder = ""
+    # max number of results length
+    maxResultLength = 10
+    # snippet length of the result
+    snippetLength = 30
+    # HTML tag name of the highlight part in results
+    highlightTag = "em"
+    # whether to use the absolute URL based on the baseURL in search index
+    absoluteURL = false
+
+[params.widgets.search.algolia]
+    index = "index"
+    appID = "NB585T2ARG"
+    searchKey = "cb8f73df3ed60f44442002afdf582f51"
 
 [params.carousel]
     enable = true
@@ -230,18 +251,10 @@ paginate = 10
     subtitle = "社群參與者的部落格與最 in 的新聞都在這裡"
 
 [outputs]
-    home = ["HTML", "RSS", "Algolia"]
+    home = ["HTML", "RSS", "algolia"]
 
 [outputFormats.Algolia]
     baseName = "algolia"
     isPlainText = true
     mediaType = "application/json"
     notAlternative = true
-
-[params.algolia]
-    enable = true
-    appid = "Q1O7C11OQ6"
-    index = "website"
-    vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
-    params = ["categories", "tags"]
-    key = "cf1cf71c81051abfc308e8c6a9188870"
