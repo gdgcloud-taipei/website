@@ -1,0 +1,70 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Serve Drafts",
+            "type": "shell",
+            "command": "hugo server -D",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "hugo",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "New Post",
+            "type": "shell",
+            "command": "hugo",
+            "args": [
+                "new",
+                "--kind",
+                "blog-bundle",
+                "blog/${input:newPostTitle}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "Update Authors/Translators Count",
+            "type": "shell",
+            "command": "./scripts/analyse.sh",
+            "options": {
+                "env": {
+                    "ORIG_JSON": "./public/algolia.json",
+                    "TRANSLATORS": "./content/translators.md",
+                    "AUTHORS": "./content/authors.md",
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "dependsOn": ["Build"]
+        },
+    ],
+    "inputs": [
+        {
+            "id": "newPostTitle",
+            "type": "promptString",
+            "description": "Name your post title.",
+            "default": "my-new-post-title"
+        },
+    ],
+}
