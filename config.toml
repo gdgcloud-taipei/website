@@ -5,8 +5,6 @@ themesDir = "./themes"
 languageCode = "en-us"
 # Site language. Available translations in the theme's `/i18n` directory.
 defaultContentLanguage = "zh-tw"
-# Enable comments by entering your Disqus shortname
-disqusShortname = "taipei-gdgcloud-tw"
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
 # Code highlight
@@ -208,6 +206,24 @@ paginate = 10
     index = "index"
     appID = "NB585T2ARG"
     searchKey = "cb8f73df3ed60f44442002afdf582f51"
+
+[params.widgets.comment]
+    enable = true
+    
+    [params.widgets.comment.disqus]
+    enable = false
+    # Disqus shortname to use Disqus in posts
+    # Disqus 的 shortname，用来在文章中启用 Disqus 评论系统
+    shortname = "taipei-gdgcloud-tw"
+
+    [params.widgets.comment.utterances]
+    enable = true
+    # owner/repo
+    repo = "gdgcloud-taipei/website"
+    issueTerm = "pathname"
+    label = "comment"
+    lightTheme = "github-light"
+    darkTheme = "github-dark"    
 
 [params.carousel]
     enable = true
