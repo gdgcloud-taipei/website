@@ -1,6 +1,6 @@
 ---
 title: Weddingcnp via Gcp
-date: 2021-01-08T09:59:24+08:00
+date: 2017-06-08T09:59:24+08:00
 draft: false
 banner: >-
   /blog/weddingcnp-via-gcp/img/weddingcnp-via-gpc-0_2.png
@@ -14,7 +14,7 @@ authorlink: http://kaichu.io
 #   - null
 originallink: https://kaichu.io/posts/weddingcnp-via-gcp/
 summary: >-
-    [Cage & Ping wedding](http://weddingcnp.appspot.com/) 是一個我們為結婚喜宴處理朋友出席報名相關事宜特別開發的網站，所有的服務全部建構在 Google Cloud Platform 上
+    Cage & Ping wedding 是一個我們為結婚喜宴處理朋友出席報名相關事宜特別開發的網站，所有的服務全部建構在 Google Cloud Platform 上
 tags:
   - wedding
   - GAE

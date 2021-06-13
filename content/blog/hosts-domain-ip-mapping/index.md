@@ -2,7 +2,7 @@
 title: 透過hosts來指定domain對應的ip位置
 date: 2017-08-14T16:21:00.000Z
 draft: false
-author: IndustrialClouds.net
+author: industrialclouds.net
 # translator: null
 # originallink: null
 # translatorlink: null

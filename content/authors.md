@@ -9,6 +9,7 @@ keywords:
 
 | 作者 | 文章數 |
 | ---- | ---- |
-
+| KAI CHU CHUNG | 2 |
+| industrialclouds.net | 2 |
 
 投遞原創文章 https://github.com/gdgcloud-taipei/website
