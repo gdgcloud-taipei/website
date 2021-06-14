@@ -43,7 +43,7 @@
         {
             "label": "Update Authors/Translators Count",
             "type": "shell",
-            "command": "./scripts/analyse.sh",
+            "command": "zx ./scripts/script.mjs",
             "options": {
                 "env": {
                     "ORIG_JSON": "./public/algolia.json",

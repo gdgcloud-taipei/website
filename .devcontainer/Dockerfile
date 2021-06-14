@@ -28,6 +28,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends webp jq
 
 # [Optional] Uncomment if you want to install more global node packages
-# RUN sudo -u node npm install -g <your-package-list-here>
+RUN sudo -u node npm install -g zx
 
 RUN curl -LO https://github.com/so-fancy/diff-so-fancy/releases/download/v1.4.0/diff-so-fancy && chmod +x diff-so-fancy && sudo mv diff-so-fancy /usr/bin/

@@ -209,7 +209,7 @@ paginate = 10
 
 [params.widgets.comment]
     enable = true
-    
+
     [params.widgets.comment.disqus]
     enable = false
     # Disqus shortname to use Disqus in posts
@@ -223,7 +223,7 @@ paginate = 10
     issueTerm = "pathname"
     label = "comment"
     lightTheme = "github-light"
-    darkTheme = "github-dark"    
+    darkTheme = "github-dark"
 
 [params.carousel]
     enable = true
@@ -274,3 +274,9 @@ paginate = 10
     isPlainText = true
     mediaType = "application/json"
     notAlternative = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  author = "author"
+  translator = "translator"
