@@ -35,7 +35,7 @@ GDGCloud Taipei 透過網際網路串聯喜好 Google Cloud 的使用者社群�
 ```bash
 mkdir -p $working_dir
 cd $working_dir
-git clone https://github.com/gdgcloud-taipei/website.git
+git clone https://github.com/$user/website.git
 cd $working_dir/website
 git remote add upstream https://github.com/gdgcloud-taipei/website.git
 
@@ -44,9 +44,12 @@ git remote set-url --push upstream no_push
 
 # Confirm your remotes make sense:
 git remote -v
+
+# update hugo theme
+git submodule init && git submodule update
 ```
 
-#### Step 4. 確保你你的分支是否同步
+#### Step 4. 確保本地你的分支是否同步
 
 ```bash
 git fetch upstream
@@ -64,35 +67,11 @@ git checkout -b mybranch
 
 #### Step 6. 建立新文章及本地預覽
 
-建立使用 VScode 開啟本地專案，並使用 VScode 的 Devcontiner，專案目錄下已經包含 `.devcontainer`
-
-##### 建立新文章
-
-![](/img/contribute-guide-1.png)
-
-![](/img/contribute-guide-2.png)
-
-`Run Tasks/New Post` 會幫助建立相關的新文章，格式請使用 `my-new-post-title` (會作為文章的 URL)
-
-##### 本地文章編寫即預覽
-
-![](/img/contribute-guide-3.png)
-
-`Run Tasks/Serve Drafts` 會在本地開啟 Hugo Server http://localhost:1313 可以瀏覽網頁
-
-##### 更新原創文章作者/譯者名單
-
-`Run Tasks/Update Authors/Translators Count` 會統計有所文章的作者/譯者並更新 `content/authors.md` & `content/translators.md` 二個檔案
-
-![](/img/contribute-guide-4.png)
-
-Run `make help` for additional information on these make targets.
+[GDGCloud Taipdi](https://taipei.gdgcloud.tw/) 使用 Hugo 進行構建，為了減輕環境配置使用 VSCode devcontainer 進行開發，詳細參與文章編寫的方式請見 [參與文章編寫指南](/contributing-editor/)
 
 #### Step 7. 進行 Git 檔案新增及 Commit 本地變更
 
-##### Sync with upstream
-
-After the test is completed, it is a good practice to keep your local in sync with upstream to avoid conflicts.
+##### 確保本地分支是建構在 upstream/master 之上
 
 ```bash
 # Rebase your master branch of your local repo.
@@ -104,16 +83,14 @@ git checkout new_feature
 git rebase -i master
 ```
 
-##### Commit local changes
+##### 本地分支修改提交
 
 ```bash
 git add <file>
 git commit -s -m "add your description"
 ```
 
-#### Step 8. 推送本地分支至個人的 website repo
-
-When ready to review (or just to establish an offsite backup of your work), push your branch to your fork on GitHub:
+#### Step 8. 推送本地分支至個人的 $user website repo
 
 ```bash
 git push -f ${your_remote_name} myfeature
@@ -121,6 +98,5 @@ git push -f ${your_remote_name} myfeature
 
 #### Step 9. Create a PR
 
-- Visit your fork at https://github.com/gdgcloud-taipei/website
-- Click the` Compare & Pull Request` button next to your myfeature branch.
-- Check out the [pull request process](pull-request.md) for more details and advice.
+- 拜訪個人 https://github.com/$user/website repo
+- 點擊 `Compare & Pull Request` 按鈕進行支分內容的合併提交
