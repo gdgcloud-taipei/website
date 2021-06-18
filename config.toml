@@ -33,11 +33,11 @@ paginate = 10
     name = "社群"
     weight = 10
 
-[[menu.main]]
-    parent="community"
-    name = "Meetup"
-    url  = "/tags/meetup"
-    weight = 11
+# [[menu.main]]
+#     parent="community"
+#     name = "Meetup"
+#     url  = "/tags/meetup"
+#     weight = 11
 
 [[menu.main]]
     parent="community"
@@ -65,8 +65,8 @@ paginate = 10
 
 [[menu.main]]
     parent="community"
-    name = "活動"
-    url  = "/activity/"
+    name = "Meetup 活動索引"
+    url  = "/activities/"
     weight = 16
 
 [[menu.main]]

@@ -58,6 +58,21 @@
             "problemMatcher": [],
             "dependsOn": ["Build"]
         },
+        {
+            "label": "Update Meetup Index",
+            "type": "shell",
+            "command": "zx ./scripts/meetup.mjs",
+            "options": {
+                "env": {
+                    "ACTIVITIES": "./content/activities.md",
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+        },
     ],
     "inputs": [
         {
