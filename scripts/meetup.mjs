@@ -82,7 +82,9 @@ const meetups = [
             {
                 article: "Teachable Machine with TPU Edge",
                 speaker: "曾吉弘",
-                releases: [],
+                releases: [{
+                    video: "https://youtu.be/oF9HoJCHvGw"
+                }],
             },
         ]
     },
@@ -95,12 +97,16 @@ const meetups = [
             {
                 article: "Anthos Recap",
                 speaker: "Bear Su",
-                releases: [],
+                releases: [{
+                    video: "https://youtu.be/BpqoyNdQNMI"
+                }],
             },
             {
                 article: "Cloud Run Recap",
                 speaker: "Richard Lee",
-                releases: [],
+                releases: [{
+                    video: "https://youtu.be/AgDHsZljUB4",
+                }],
             },
         ]
     },
@@ -113,12 +119,16 @@ const meetups = [
             {
                 article: "Application Modernization",
                 speaker: "KAI-CHU CHUNG",
-                releases: [],
+                releases: [{
+                    video: "https://youtu.be/AxWxNim0BSo"
+                }],
             },
             {
                 article: "Cloud SQL Recap",
                 speaker: "Brent Chang",
-                releases: [],
+                releases: [{
+                    video: "https://youtu.be/orqAilMsGig",
+                }],
             },
         ]
     },
@@ -138,7 +148,9 @@ const meetups = [
             {
                 article: "Data Analytics - BigQuery Recap",
                 speaker: "東東 Aaron",
-                releases: [],
+                releases: [{
+                    video: "https://www.youtube.com/watch?v=Mp7-JsZ1tNA"
+                }],
             }
         ]
     },
@@ -274,12 +286,18 @@ const meetups = [
 ]
 
 
+const icons = {
+    video: `{{< fa fab youtube 2x >}}`,
+    slide: `{{< fa file-powerpoint 2x >}}`,
+    github: `{{< fa fab github 2x >}}`,
+    album: `{{< fa fas images 2x >}}`
+}
 const genLink = (link, type) => link ? `[${type}](${link})` : ``
 const genRelease = releases => {
     let data = []
     releases.forEach(release => {
         for (const key in release) {
-            data.push(`${genLink(release[key], key)}`)
+            data.push(`${genLink(release[key], icons[key])}`)
         }
     })
     return data.join(" ")
@@ -288,7 +306,7 @@ const genRelease = releases => {
 const generator = items => {
     let data = []
     items.forEach(item => {
-        data.push(`|#|${item.date}|${item.event ? genLink(item.event, item.name) : item.name}|${genLink(item.album, `album`)}|||`)
+        data.push(`|#|${item.date}|${item.event ? genLink(item.event, item.name) : item.name}|${genLink(item.album, icons[`album`])}|||`)
         item.content.forEach((content, index) => {
             data.push(`|||**${content.article}** / **@${content.speaker}**||${genRelease(content.releases)}|`)
         })
