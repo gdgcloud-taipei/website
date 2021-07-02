@@ -9,6 +9,6 @@
 - [ ] 文章標題簡短且語義明確
 - [ ] 文章語句通順，沒有語病和格式問題
 - [ ] 文中沒有失效的連接
-- [ ] 提交者同意授權 [GDGCloud Taipdi · GDGCloud Taipei](https://taipei.gdgcloud.tw/) 發佈原創或翻譯的文章
+- [ ] 提交者同意授權 [GDGCloud Taipei · GDGCloud Taipei](https://taipei.gdgcloud.tw/) 發佈原創或翻譯的文章
 
 當所有以上問題都確定之後，可以由管理者合併 PR 並關閉關聯 issue

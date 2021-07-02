@@ -1,5 +1,5 @@
 baseurl = "https://taipei.gdgcloud.tw/"
-title = "GDGCloud Taipdi"
+title = "GDGCloud Taipei"
 theme = "hugo-universal-theme"
 themesDir = "./themes"
 languageCode = "en-us"

@@ -67,7 +67,7 @@ git checkout -b mybranch
 
 #### Step 6. 建立新文章及本地預覽
 
-[GDGCloud Taipdi](https://taipei.gdgcloud.tw/) 使用 Hugo 進行構建，為了減輕環境配置使用 VSCode devcontainer 進行開發，詳細參與文章編寫的方式請見 [參與文章編寫指南](/contributing-editor/)
+[GDGCloud Taipei](https://taipei.gdgcloud.tw/) 使用 Hugo 進行構建，為了減輕環境配置使用 VSCode devcontainer 進行開發，詳細參與文章編寫的方式請見 [參與文章編寫指南](/contributing-editor/)
 
 #### Step 7. 進行 Git 檔案新增及 Commit 本地變更
 

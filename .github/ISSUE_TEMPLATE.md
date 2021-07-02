@@ -22,4 +22,4 @@
 - [ ] 已提送 PR
 - [ ] 正在 review
 - [ ] review 完成等待發布
-- [ ] 已發佈到 [GDGCloud Taipdi · GDGCloud Taipei](https://taipei.gdgcloud.tw/)
+- [ ] 已發佈到 [GDGCloud Taipei · GDGCloud Taipei](https://taipei.gdgcloud.tw/)
